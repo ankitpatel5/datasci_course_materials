@@ -6,6 +6,7 @@ Public repository for course materials for the Spring 2013 and 2014 sessions of 
 This repository contains my work with the course assignments
 
 What I learned:
+---------------
 
 - Using Twitter APIs
 - Doing Twitter sentiment analysis in Python
