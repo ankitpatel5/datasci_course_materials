@@ -1,12 +1,20 @@
 import oauth2 as oauth
 import urllib2 as urllib
 
+"""
+Streams public tweets
+
+Execution: $ python twitterstream.py
+"""
 # See assignment1.html instructions or README for how to get these credentials
 
-api_key = "<Enter api key>"
-api_secret = "<Enter api secret>"
-access_token_key = "<Enter your access token key here>"
-access_token_secret = "<Enter your access token secret here>"
+"""
+The following must be configured before being able to stream or make requests to the twitter API
+"""
+api_key = "UiEJzaQAyp1we3SljLACBNTsA"
+api_secret = "Ew2eL4I9h2Q7mic4LMG7hqnJJl1IzbCi7fXOc73idzJd060fcv"
+access_token_key = "18215735-1pf4uBNpneMETq2Y4Xy3YPVPyHVfwSSw1pJjoHAhR"
+access_token_secret = "P4stfw49wnvPHt2YiX7rQfZ4yOGlqJER6S4PwawinM5xA"
 
 _debug = 0
 
@@ -51,7 +59,8 @@ def twitterreq(url, method, parameters):
   return response
 
 def fetchsamples():
-  url = "https://stream.twitter.com/1/statuses/sample.json"
+  url = "https://stream.twitter.com/1.1/statuses/sample.json"
+  #url = "https://api.twitter.com/1.1/search/tweets.json?q=lebron+james&count=100"
   parameters = []
   response = twitterreq(url, "GET", parameters)
   for line in response:

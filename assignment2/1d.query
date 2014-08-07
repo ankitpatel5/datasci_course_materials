@@ -1,0 +1,5 @@
+select count(*) from(
+	select docid as DocumentID, sum(count) as NumberOfTerms from frequency
+	group by docid
+	having sum(count) > 300
+);

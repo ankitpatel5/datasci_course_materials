@@ -1,0 +1,28 @@
+-- d is regular <docid, term, count> table
+-- dt is a transposed matric of d
+
+CREATE VIEW d AS
+SELECT * FROM Frequency
+WHERE docid = '10080_txt_crude'
+or docid = '17035_txt_earn';
+
+--Create another table with that is transposed
+CREATE VIEW dt AS
+SELECT term, docid, count FROM Frequency
+WHERE docid = '10080_txt_crude'
+or docid = '17035_txt_earn';
+
+--calculate the matrix multiplication
+--and choose the value of interest
+select val 
+from (
+	select d.docid as doc1, dt.docid as doc2, sum(d.count*dt.count) as val
+	from d, dt
+	where d.term=dt.term
+	group by d.docid, dt.docid
+)
+where 
+	doc1 = '10080_txt_crude' and doc2='17035_txt_earn';
+	
+DROP VIEW d;
+DROP VIEW dt;

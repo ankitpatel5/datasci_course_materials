@@ -1,0 +1,30 @@
+-- d is regular <docid, term, count> table with keyword entries added
+-- dt is a transposed matric of d
+
+CREATE VIEW d AS
+SELECT * FROM frequency
+UNION
+SELECT 'q' as docid, 'washington' as term, 1 as count 
+UNION
+SELECT 'q' as docid, 'taxes' as term, 1 as count
+UNION 
+SELECT 'q' as docid, 'treasury' as term, 1 as count;
+
+--Create another table with that is transposed
+CREATE VIEW dt AS
+SELECT term, docid, count FROM d;
+
+--calculate the matrix multiplication
+--and choose the value of interest
+select max(val) 
+from (
+	select d.docid as doc1, dt.docid as doc2, sum(d.count*dt.count) as val
+	from d, dt
+	where d.term in ('washington', 'taxes', 'treasury') and d.term=dt.term
+	group by d.docid, dt.docid
+)
+where 
+	doc1 = 'q';
+	
+DROP VIEW d;
+DROP VIEW dt;
