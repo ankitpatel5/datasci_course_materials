@@ -2,6 +2,8 @@ import MapReduce
 import sys
 
 """
+@author: Ankit Patel
+
 Implementation of a relational join as a MapReduce query 
 in the Simple Python MapReduce Framework
 

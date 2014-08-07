@@ -2,6 +2,8 @@ import MapReduce
 import sys
 
 """
+@author: Ankit Patel
+
 Creates an Inverted index in the Simple Python MapReduce Framework
 
 Given a set of documents, an inverted index is a dictionary where each word 

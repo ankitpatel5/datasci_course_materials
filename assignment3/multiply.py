@@ -2,6 +2,8 @@ import MapReduce
 import sys
 
 """
+@author: Ankit Patel
+
 Assume you have two matrices A and B in a sparse matrix format, 
 where each record is of the form i, j, value. Design a MapReduce 
 algorithm to compute the matrix multiplication A x B

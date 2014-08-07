@@ -2,6 +2,7 @@ import MapReduce
 import sys
 
 """
+@author: Ankit Patel
 
 Describes a MapReduce algorithm to count the number of friends 
 for each person in a simple social network dataset consisting 

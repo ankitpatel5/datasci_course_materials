@@ -2,6 +2,8 @@ import MapReduce
 import sys
 
 """
+@author: Ankit Patel
+
 Consider a set of key-value pairs where each key is 
 sequence id and each value is a string of nucleotides, 
 e.g., GCTTCCGAAATGCTCGAA....

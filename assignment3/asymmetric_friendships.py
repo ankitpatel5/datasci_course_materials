@@ -3,6 +3,8 @@ import sys
 
 """
 
+@author: Ankit Patel
+
 The relationship "friend" is often symmetric, meaning 
 that if I am your friend, you are my friend. Here we
 implement a MapReduce algorithm to check whether this 
